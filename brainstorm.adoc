@@ -1,0 +1,77 @@
+= Brainstorming : Génération de flux RSS avec Gradle Kotlin DSL
+
+== Objectif
+
+Créer un flux RSS à partir du contenu du dépôt `cccp-education/central-content`, sans interaction serveur, en utilisant des tâches Gradle Kotlin et en centralisant la logique dans `buildSrc`.
+
+== Structure du projet
+
+*   `buildSrc`:
+*   `build.gradle.kts`: Configuration des dépendances pour `buildSrc`.
+*   `src/main/kotlin`:
+*   `ContentModel.kt`: Classes de données (ContentItem, ContentType).
+*   `ContentProcessing.kt`: Logique pour lire et parser les métadonnées YAML.
+*   `RssGeneration.kt`: Logique pour générer le flux RSS (utilisation de ROME).
+*   `build.gradle.kts` (racine): Configuration du projet principal et définition des tâches Gradle.
+*   `content`: Dossier contenant le contenu et les fichiers `metadata.yaml`.
+*   `static`: Dossier contenant les fichiers statiques du site web.
+
+== Modèle de données (ContentModel.kt)
+
+[source,kotlin]
+----
+package cccp.education.content
+
+import java.time.OffsetDateTime
+
+enum class ContentType {
+    TEXT, VIDEO, AUDIO, PHOTO
+}
+
+data class ContentItem(
+    val title: String,
+    val description: String,
+    val link: String,
+    val publicationDate: OffsetDateTime,
+    val contentType: ContentType
+)
+----
+
+== Format des métadonnées (metadata.yaml)
+
+[source,yaml]
+----
+title: "Mon Article"
+description: "Une description de mon article"
+link: "https://example.com/mon-article"
+publicationDate: "2024-03-22T10:00:00Z"
+contentType: TEXT
+----
+
+== Tâches Gradle
+
+*   `generateRssFeed`: Lit les métadonnées, crée les objets `ContentItem` et génère le fichier `rss.xml`.
+*   `copyRssToGhPages`: Copie le fichier `rss.xml` vers le dossier `gh-pages`.
+*   `prepareGhPages`: Copie les fichiers statiques du dossier `static` vers le dossier `gh-pages`.
+*   `deployGhPages`: Indique à l'utilisateur de commiter et de pousser le contenu du dossier `gh-pages` vers la branche `gh-pages` sur GitHub.
+
+== Points d'attention
+
+*   Gestion des erreurs lors du parsing des métadonnées :
+*   Utilisation de SLF4J pour une journalisation plus détaillée.
+*   Validation des champs obligatoires (title, publicationDate, contentType) avant la création de l'objet `ContentItem`.
+*   Gestion des exceptions lors du parsing YAML pour éviter l'arrêt du processus.
+*   Flexibilité du format de la date (gestion de différents formats ISO-8601) :
+*   Prise en charge de plusieurs formats ISO-8601 courants.
+*   Gestion du type de contenu invalide:
+*   Utilisation d'une valeur par défaut si le type de contenu n'est pas reconnu.
+*   Configuration du chemin du dossier `content` dans le fichier `build.gradle.kts`.
+*   Utilisation de champs nullables dans la classe `Metadata` pour faciliter la validation et la gestion des champs manquants.
+*   Fourniture de valeurs par défaut pour les champs optionnels (description, link).
+
+== design system
+
+=== colors
+
+bleu : #013DFF
+blanc : #FFFFFF

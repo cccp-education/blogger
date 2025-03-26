@@ -1,0 +1,192 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+@-ms-viewport     { width: device-width; }
+@-o-viewport      { width: device-width; }
+@viewport         { width: device-width; }
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: 60px;
+}
+#footer {
+  background-color: #f5f5f5;
+  padding: 0;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+#wrap > .container {
+  padding-top: 60px;
+}
+.container .credit {
+  margin: 20px 0;
+}
+
+/*code {
+  font-size: 80%;
+}*/
+
+
+.ko-fi::after {
+  content: '\f004';
+  font-weight: 900;
+  font-size: 15px;
+  color: #fff;
+  position: absolute;
+  margin: 20px 0 0 -32px;
+}
+
+
+/* Styles améliorés pour une meilleure visibilité */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.hero-section {
+  background-color: #f8f9fa;
+  padding: 80px 0;
+  margin-top: 60px;
+  border-radius: 10px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #212529;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #6c757d;
+}
+
+.content-section {
+  padding: 60px 0;
+}
+
+.content-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+}
+
+.content-card-body {
+  padding: 25px;
+}
+
+.content-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.nav-link {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 10px 15px !important;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.social-icon {
+  font-size: 1.8rem;
+  margin-right: 15px;
+  color: #212529;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #0d6efd;
+}
+
+.btn-primary {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.footer {
+  padding: 40px 0;
+  background-color: #212529;
+  color: #fff;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #0d6efd;
+}
+
+.footer-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.footer-link {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+.footer-icon {
+  width: 20px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+}
