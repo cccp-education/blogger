@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="google-site-verification" content="oTZL-J0lpqoMMfQvrhFBaPfG1gtsswFKz1RzHoMLgbo" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Gauche - Articles, Vidéos, Podcasts et plus">
+  <meta name="author" content="A Gauche">
+  <meta name="keywords" content="articles, vidéos, podcasts, contenu">
+
+  <!-- Styles -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+      /* Sticky footer styles
+      -------------------------------------------------- */
+      @-ms-viewport     { width: device-width; }
+      @-o-viewport      { width: device-width; }
+      @viewport         { width: device-width; }
+
+      html,
+      body {
+          height: 100%;
+          /* The html and body elements cannot have any padding or margin. */
+      }
+
+      /* Wrapper for page content to push down footer */
+      #wrap {
+          min-height: 100%;
+          height: auto !important;
+          height: 100%;
+          /* Negative indent footer by it's height */
+          margin: 0 auto -60px;
+      }
+
+      /* Set the fixed height of the footer here */
+      #push,
+      #footer {
+          height: 60px;
+      }
+      #footer {
+          background-color: #f5f5f5;
+          padding: 0;
+      }
+
+      /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+          #footer {
+              margin-left: -20px;
+              margin-right: -20px;
+              padding-left: 20px;
+              padding-right: 20px;
+          }
+      }
+
+      /* Custom page CSS
+      -------------------------------------------------- */
+      /* Not required for template or sticky footer method. */
+
+      #wrap > .container {
+          padding-top: 60px;
+      }
+      .container .credit {
+          margin: 20px 0;
+      }
+
+      /*code {
+        font-size: 80%;
+      }*/
+
+
+      .ko-fi::after {
+          content: '\f004';
+          font-weight: 900;
+          font-size: 15px;
+          color: #fff;
+          position: absolute;
+          margin: 20px 0 0 -32px;
+      }
+
+
+      /* Styles améliorés pour une meilleure visibilité */
+      body {
+          font-family: 'Roboto', sans-serif;
+          font-size: 18px;
+          line-height: 1.6;
+          color: #333;
+      }
+
+      .hero-section {
+          background-color: #f8f9fa;
+          padding: 80px 0;
+          margin-top: 60px;
+          border-radius: 10px;
+      }
+
+      .hero-title {
+          font-size: 3.5rem;
+          font-weight: 700;
+          margin-bottom: 20px;
+          color: #212529;
+      }
+
+      .hero-subtitle {
+          font-size: 1.5rem;
+          margin-bottom: 30px;
+          color: #6c757d;
+      }
+
+      .content-section {
+          padding: 60px 0;
+      }
+
+      .content-card {
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+          transition: transform 0.3s ease;
+          height: 100%;
+      }
+
+      .content-card:hover {
+          transform: translateY(-5px);
+      }
+
+      .content-card-body {
+          padding: 25px;
+      }
+
+      .content-card-title {
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin-bottom: 15px;
+      }
+
+      .nav-link {
+          font-size: 1.1rem;
+          font-weight: 500;
+          padding: 10px 15px !important;
+      }
+
+      .navbar-brand {
+          font-size: 1.5rem;
+          font-weight: 700;
+      }
+
+      .social-icon {
+          font-size: 1.8rem;
+          margin-right: 15px;
+          color: #212529;
+          transition: color 0.3s ease;
+      }
+
+      .social-icon:hover {
+          color: #0d6efd;
+      }
+
+      .btn-primary {
+          padding: 12px 25px;
+          font-size: 1.1rem;
+          font-weight: 500;
+      }
+
+      .footer {
+          padding: 40px 0;
+          background-color: #212529;
+          color: #fff;
+      }
+
+      .footer a {
+          color: #fff;
+          text-decoration: none;
+          transition: color 0.3s ease;
+      }
+
+      .footer a:hover {
+          color: #0d6efd;
+      }
+
+      .footer-title {
+          font-size: 1.3rem;
+          font-weight: 600;
+          margin-bottom: 20px;
+      }
+
+      .footer-link {
+          display: block;
+          margin-bottom: 12px;
+          font-size: 1.05rem;
+      }
+
+      .footer-icon {
+          width: 20px;
+          text-align: center;
+          margin-right: 10px;
+      }
+
+      @media (max-width: 768px) {
+          .hero-title {
+              font-size: 2.5rem;
+          }
+
+          .hero-subtitle {
+              font-size: 1.2rem;
+          }
+      }
+  </style>
+
+  <style>
+      /* Styles améliorés pour une meilleure visibilité */
+      body {
+          font-family: 'Roboto', sans-serif;
+          font-size: 18px;
+          line-height: 1.6;
+          color: #333;
+      }
+
+      .hero-section {
+          background-color: #f8f9fa;
+          padding: 80px 0;
+          margin-top: 60px;
+          border-radius: 10px;
+      }
+
+      .hero-title {
+          font-size: 3.5rem;
+          font-weight: 700;
+          margin-bottom: 20px;
+          color: #212529;
+      }
+
+      .hero-subtitle {
+          font-size: 1.5rem;
+          margin-bottom: 30px;
+          color: #6c757d;
+      }
+
+      .content-section {
+          padding: 60px 0;
+      }
+
+      .content-card {
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+          transition: transform 0.3s ease;
+          height: 100%;
+      }
+
+      .content-card:hover {
+          transform: translateY(-5px);
+      }
+
+      .content-card-body {
+          padding: 25px;
+      }
+
+      .content-card-title {
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin-bottom: 15px;
+      }
+
+      .nav-link {
+          font-size: 1.1rem;
+          font-weight: 500;
+          padding: 10px 15px !important;
+      }
+
+      .navbar-brand {
+          font-size: 1.5rem;
+          font-weight: 700;
+      }
+
+      .social-icon {
+          font-size: 1.8rem;
+          margin-right: 15px;
+          color: #212529;
+          transition: color 0.3s ease;
+      }
+
+      .social-icon:hover {
+          color: #0d6efd;
+      }
+
+      .btn-primary {
+          padding: 12px 25px;
+          font-size: 1.1rem;
+          font-weight: 500;
+      }
+
+      .footer {
+          padding: 40px 0;
+          background-color: #212529;
+          color: #fff;
+      }
+
+      .footer a {
+          color: #fff;
+          text-decoration: none;
+          transition: color 0.3s ease;
+      }
+
+      .footer a:hover {
+          color: #0d6efd;
+      }
+
+      .footer-title {
+          font-size: 1.3rem;
+          font-weight: 600;
+          margin-bottom: 20px;
+      }
+
+      .footer-link {
+          display: block;
+          margin-bottom: 12px;
+          font-size: 1.05rem;
+      }
+
+      .footer-icon {
+          width: 20px;
+          text-align: center;
+          margin-right: 10px;
+      }
+
+      @media (max-width: 768px) {
+          .hero-title {
+              font-size: 2.5rem;
+          }
+
+          .hero-subtitle {
+              font-size: 1.2rem;
+          }
+      }
+  </style>
+
+  <script src="https://kit.fontawesome.com/01a45d7f35.js" crossorigin="anonymous"></script>
+
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>A Gauche</title>
+
+</head>
+<body>
+<!-- Navigation -->
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">-->
+<!--  <div class="container">-->
+<!--    <a class="navbar-brand" href="/"><i class="fa-regular fa-circle-left me-0"></i></a>-->
+<!--    <button class="navbar-toggler"-->
+<!--            type="button"-->
+<!--            data-bs-toggle="collapse"-->
+<!--            data-bs-target="#navbarNav"-->
+<!--            aria-controls="navbarNav"-->
+<!--            aria-expanded="false"-->
+<!--            aria-label="Toggle navigation">-->
+<!--      <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+<!--    <div class="collapse navbar-collapse"-->
+<!--         id="navbarNav">-->
+<!--      <ul class="navbar-nav ms-auto">-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="blog.html"><i class="fa-solid fa-newspaper me-1"></i> Articles</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="blog.html"><i class="fa-solid fa-film me-1"></i> Vidéos</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="blog.html"><i class="fa-solid fa-podcast me-1"></i> Podcast</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="blog.html"><i class="fa-solid fa-calendar-days me-1"></i> Agenda</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item dropdown">-->
+<!--          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--            <i class="fa-solid fa-link me-1"></i> Liens-->
+<!--          </a>-->
+<!--          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">-->
+<!--            <li><a class="dropdown-item" href="https://www.youtube.com/@agauche"><i class="fa-brands fa-youtube"></i> YouTube</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://ko-fi.com/agauche"><i class="fa-solid fa-mug-hot me-2"></i> Ko-fi</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://discord.gg/NGBc4nTrEu"><i class="fa-brands fa-discord me-2"></i> Discord</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://x.com/AgaucheYT"><i class="fa-brands fa-x-twitter me-2"></i> Twitter</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://www.facebook.com/AgaucheYoutube"><i class="fa-brands fa-square-facebook me-2"></i> Facebook</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://www.instagram.com/agauche_officiel"><i class="fa-brands fa-square-instagram me-2"></i> Instagram</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://open.spotify.com/show/1ovb7OAtTd5a0yg4uw5wqO"><i class="fa-brands fa-spotify me-2"></i> Spotify</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://deezer.com/show/1001701601"><i class="fa-brands fa-deezer me-2"></i> Deezer</a></li>-->
+<!--            <li><a class="dropdown-item" href="feed.xml"><i class="fa-solid fa-rss footer-icon me-2"></i> RSS</a></li>-->
+
+<!--          </ul>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="mailto:contact@example.com"><i class="fa-solid fa-envelope me-1"></i> Contact</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">-->
+<!--  <div class="container">-->
+<!--    <a class="navbar-brand d-flex align-items-center p-0" href="/">-->
+<!--      <i class="fa-regular fa-circle-left"></i>-->
+<!--    </a>-->
+
+<!--    &lt;!&ndash; Articles placé à gauche &ndash;&gt;-->
+<!--    <div class="d-none d-lg-block">-->
+<!--      <ul class="navbar-nav">-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="blog.html"><i class="fa-solid fa-newspaper me-1"></i> Articles</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+
+<!--    <button class="navbar-toggler"-->
+<!--            type="button"-->
+<!--            data-bs-toggle="collapse"-->
+<!--            data-bs-target="#navbarNav"-->
+<!--            aria-controls="navbarNav"-->
+<!--            aria-expanded="false"-->
+<!--            aria-label="Toggle navigation">-->
+<!--      <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+
+<!--    <div class="collapse navbar-collapse" id="navbarNav">-->
+<!--      <ul class="navbar-nav ms-auto">-->
+<!--        &lt;!&ndash; Articles visible uniquement sur mobile &ndash;&gt;-->
+<!--        <li class="nav-item d-lg-none">-->
+<!--          <a class="nav-link" href="blog.html"><i class="fa-solid fa-newspaper me-1"></i> Articles</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="blog.html"><i class="fa-solid fa-film me-1"></i> Vidéos</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="blog.html"><i class="fa-solid fa-podcast me-1"></i> Podcast</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="blog.html"><i class="fa-solid fa-calendar-days me-1"></i> Agenda</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item dropdown">-->
+<!--          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--            <i class="fa-solid fa-link me-1"></i> Liens-->
+<!--          </a>-->
+<!--          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">-->
+<!--            <li><a class="dropdown-item" href="https://www.youtube.com/@agauche"><i class="fa-brands fa-youtube"></i> YouTube</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://ko-fi.com/agauche"><i class="fa-solid fa-mug-hot me-2"></i> Ko-fi</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://discord.gg/NGBc4nTrEu"><i class="fa-brands fa-discord me-2"></i> Discord</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://x.com/AgaucheYT"><i class="fa-brands fa-x-twitter me-2"></i> Twitter</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://www.facebook.com/AgaucheYoutube"><i class="fa-brands fa-square-facebook me-2"></i> Facebook</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://www.instagram.com/agauche_officiel"><i class="fa-brands fa-square-instagram me-2"></i> Instagram</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://open.spotify.com/show/1ovb7OAtTd5a0yg4uw5wqO"><i class="fa-brands fa-spotify me-2"></i> Spotify</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://deezer.com/show/1001701601"><i class="fa-brands fa-deezer me-2"></i> Deezer</a></li>-->
+<!--            <li><a class="dropdown-item" href="feed.xml"><i class="fa-solid fa-rss footer-icon me-2"></i> RSS</a></li>-->
+<!--          </ul>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="/cdn-cgi/l/email-protection#c2a1adacb6a3a1b682a7baa3afb2aea7eca1adaf"><i class="fa-solid fa-envelope me-1"></i> Contact</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
+<!-- Navigation -->
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">-->
+<!--  <div class="container">-->
+<!--    <a class="navbar-brand d-flex align-items-center p-0" href="/">-->
+<!--      <i class="fa-regular fa-circle-left"></i>-->
+<!--    </a>-->
+
+<!--    <button class="navbar-toggler"-->
+<!--            type="button"-->
+<!--            data-bs-toggle="collapse"-->
+<!--            data-bs-target="#navbarNav"-->
+<!--            aria-controls="navbarNav"-->
+<!--            aria-expanded="false"-->
+<!--            aria-label="Toggle navigation">-->
+<!--      <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+
+<!--    <div class="collapse navbar-collapse" id="navbarNav">-->
+<!--      &lt;!&ndash; Éléments à gauche &ndash;&gt;-->
+<!--      <ul class="navbar-nav me-auto">-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="blog.html"><i class="fa-solid fa-newspaper me-1"></i> Articles</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="blog.html"><i class="fa-solid fa-film me-1"></i> Vidéos</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="blog.html"><i class="fa-solid fa-podcast me-1"></i> Podcast</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+
+<!--      &lt;!&ndash; Éléments à droite &ndash;&gt;-->
+<!--      <ul class="navbar-nav">-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="blog.html"><i class="fa-solid fa-calendar-days me-1"></i> Agenda</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item dropdown">-->
+<!--          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--            <i class="fa-solid fa-link me-1"></i> Liens-->
+<!--          </a>-->
+<!--          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">-->
+<!--            <li><a class="dropdown-item" href="https://www.youtube.com/@agauche"><i class="fa-brands fa-youtube"></i> YouTube</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://ko-fi.com/agauche"><i class="fa-solid fa-mug-hot me-2"></i> Ko-fi</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://discord.gg/NGBc4nTrEu"><i class="fa-brands fa-discord me-2"></i> Discord</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://x.com/AgaucheYT"><i class="fa-brands fa-x-twitter me-2"></i> Twitter</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://www.facebook.com/AgaucheYoutube"><i class="fa-brands fa-square-facebook me-2"></i> Facebook</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://www.instagram.com/agauche_officiel"><i class="fa-brands fa-square-instagram me-2"></i> Instagram</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://open.spotify.com/show/1ovb7OAtTd5a0yg4uw5wqO"><i class="fa-brands fa-spotify me-2"></i> Spotify</a></li>-->
+<!--            <li><a class="dropdown-item" href="https://deezer.com/show/1001701601"><i class="fa-brands fa-deezer me-2"></i> Deezer</a></li>-->
+<!--            <li><a class="dropdown-item" href="feed.xml"><i class="fa-solid fa-rss footer-icon me-2"></i> RSS</a></li>-->
+<!--          </ul>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="/cdn-cgi/l/email-protection#c2a1adacb6a3a1b682a7baa3afb2aea7eca1adaf"><i class="fa-solid fa-envelope me-1"></i> Contact</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center p-0" href="/">
+      <i class="fa-regular fa-circle-left"></i>
+    </a>
+
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Tous les éléments alignés à gauche -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html"><i class="fa-solid fa-newspaper me-1"></i> Articles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html"><i class="fa-solid fa-film me-1"></i> Vidéos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html"><i class="fa-solid fa-podcast me-1"></i> Podcast</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html"><i class="fa-solid fa-calendar-days me-1"></i> Agenda</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-link me-1"></i> Liens
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="https://www.youtube.com/@agauche"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+            <li><a class="dropdown-item" href="https://ko-fi.com/agauche"><i class="fa-solid fa-mug-hot me-2"></i> Ko-fi</a></li>
+            <li><a class="dropdown-item" href="https://discord.gg/NGBc4nTrEu"><i class="fa-brands fa-discord me-2"></i> Discord</a></li>
+            <li><a class="dropdown-item" href="https://x.com/AgaucheYT"><i class="fa-brands fa-x-twitter me-2"></i> Twitter</a></li>
+            <li><a class="dropdown-item" href="https://www.facebook.com/AgaucheYoutube"><i class="fa-brands fa-square-facebook me-2"></i> Facebook</a></li>
+            <li><a class="dropdown-item" href="https://www.instagram.com/agauche_officiel"><i class="fa-brands fa-square-instagram me-2"></i> Instagram</a></li>
+            <li><a class="dropdown-item" href="https://open.spotify.com/show/1ovb7OAtTd5a0yg4uw5wqO"><i class="fa-brands fa-spotify me-2"></i> Spotify</a></li>
+            <li><a class="dropdown-item" href="https://deezer.com/show/1001701601"><i class="fa-brands fa-deezer me-2"></i> Deezer</a></li>
+            <li><a class="dropdown-item" href="feed.xml"><i class="fa-solid fa-rss footer-icon me-2"></i> RSS</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cdn-cgi/l/email-protection#c2a1adacb6a3a1b682a7baa3afb2aea7eca1adaf"><i class="fa-solid fa-envelope me-1"></i> Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="hero-title">Bienvenue sur A Gauche</h1>
+        <p class="hero-subtitle">Découvrez mes articles, vidéos et podcasts</p>
+        <div class="d-flex gap-3 mb-4">
+          <a href="blog.html" class="btn btn-primary"><i class="fa-solid fa-newspaper me-2"></i>Voir les articles</a>
+          <a href="blog.html" class="btn btn-outline-dark"><i class="fa-solid fa-film me-2"></i>Regarder les vidéos</a>
+        </div>
+        <div class="mt-4">
+          <a href="https://www.youtube.com/@agauche" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://x.com/AgaucheYT" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.facebook.com/AgaucheYoutube" class="social-icon"><i class="fa-brands fa-square-facebook"></i></a>
+          <a href="https://www.instagram.com/agauche_officiel" class="social-icon"><i class="fa-brands fa-square-instagram"></i></a>
+          <a href="https://discord.gg/NGBc4nTrEu" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+          <a href="https://ko-fi.com/agauche" class="social-icon"><i class="fa-solid fa-mug-hot me-2"></i></a>
+          <a href="https://open.spotify.com/show/1ovb7OAtTd5a0yg4uw5wqO" class="social-icon"><i class="fa-brands fa-spotify me-2"></i></a>
+          <a href="https://deezer.com/show/1001701601" class="social-icon"><i class="fa-brands fa-deezer me-2"></i></a>
+          <a href="feed.xml" class="social-icon"><i class="fa-solid fa-rss footer-icon me-2"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-6 mt-5 mt-lg-0">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Content Section -->
+<section class="content-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h2 class="display-4 mb-4">Découvrez mon contenu</h2>
+        <p class="lead mb-0">Explorez mes dernières publications et créations</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Articles Card -->
+      <div class="col-md-4">
+        <div class="content-card">
+          <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Articles">
+          <div class="content-card-body">
+            <h3 class="content-card-title"><i class="fa-solid fa-newspaper me-2"></i>Articles</h3>
+            <p>Découvrez mes derniers articles et analyses sur divers sujets qui me passionnent.</p>
+            <a href="blog.html" class="btn btn-primary">Lire les articles</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Videos Card -->
+      <div class="col-md-4">
+        <div class="content-card">
+          <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Vidéos">
+          <div class="content-card-body">
+            <h3 class="content-card-title"><i class="fa-solid fa-film me-2"></i>Vidéos</h3>
+            <p>Regardez mes dernières vidéos et abonnez-vous pour ne manquer aucun contenu.</p>
+            <a href="blog.html" class="btn btn-primary">Voir les vidéos</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Podcast Card -->
+      <div class="col-md-4">
+        <div class="content-card">
+          <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Podcast">
+          <div class="content-card-body">
+            <h3 class="content-card-title"><i class="fa-solid fa-podcast me-2"></i>Podcast</h3>
+            <p>Écoutez mes podcasts sur Spotify, Deezer et d'autres plateformes audio.</p>
+            <a href="blog.html" class="btn btn-primary">Écouter le podcast</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0"/>
+    </div>
+    <div class="col-lg-6">
+      <h2 class="display-5 mb-4">À propos de moi</h2>
+      <p class="lead mb-4">Vous êtes intéressé par mon contenu.</p>
+      <p class="mb-4">Suivez-moi sur mes réseaux sociaux pour rester informé de mes dernières publications et activités.</p>
+      <p class="mb-4">Pour toutes demandes ou collaborations, n'hésitez pas à me contacter.</p>
+      <a href="mailto:contact@example.com" class="btn btn-primary">
+        <i class="fa-solid fa-envelope me-2"></i>Me contacter
+      </a>
+      <a href="https://ko-fi.com/agauche" class="btn btn-outline-dark ms-2">
+        <i class="fa-solid fa-mug-hot me-2"></i>Me soutenir
+      </a>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="display-5 mb-4">Restez informé</h2>
+        <p class="lead mb-5">Inscrivez-vous à ma newsletter pour recevoir mes dernières publications</p>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <form>
+              <div class="input-group mb-3">
+                <input type="email" class="form-control form-control-lg" placeholder="Votre adresse email" aria-label="Email">
+                <button class="btn btn-primary" type="submit">S'inscrire</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="footer-title">Navigation</h5>
+        <a href="blog.html" class="footer-link"><i class="fa-solid fa-newspaper footer-icon"></i> Articles</a>
+        <a href="blog.html" class="footer-link"><i class="fa-solid fa-film footer-icon"></i> Vidéos</a>
+        <a href="blog.html" class="footer-link"><i class="fa-solid fa-podcast footer-icon"></i> Podcast</a>
+        <a href="blog.html" class="footer-link"><i class="fa-solid fa-calendar-days footer-icon"></i> Agenda</a>
+        <a href="about.html" class="footer-link"><i class="fa-solid fa-info-circle footer-icon"></i> À propos</a>
+        <a href="feed.xml" class="footer-link"><i class="fa-solid fa-rss footer-icon"></i> RSS</a>
+      </div>
+
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="footer-title">Me suivre</h5>
+        <a href="https://www.youtube.com/@agauche" class="footer-link"><i class="fa-brands fa-youtube"></i> YouTube</a>
+        <a href="https://discord.gg/NGBc4nTrEu" class="footer-link"><i class="fa-brands fa-discord footer-icon"></i> Discord</a>
+        <a href="https://x.com/AgaucheYT" class="footer-link"><i class="fa-brands fa-x-twitter footer-icon"></i> Twitter</a>
+        <a href="https://www.facebook.com/AgaucheYoutube" class="footer-link"><i class="fa-brands fa-square-facebook footer-icon"></i> Facebook</a>
+        <a href="https://www.instagram.com/agauche_officiel" class="footer-link"><i class="fa-brands fa-square-instagram footer-icon"></i> Instagram</a>
+        <a href="https://open.spotify.com/show/1ovb7OAtTd5a0yg4uw5wqO" class="footer-link"><i class="fa-brands fa-spotify footer-icon"></i> Spotify</a>
+        <a href="https://deezer.com/show/1001701601" class="footer-link"><i class="fa-brands fa-deezer footer-icon"></i> Deezer</a>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="footer-title">Soutien & Contact</h5>
+        <a href="https://ko-fi.com/agauche" class="footer-link mb-3">
+          <i class="fa-solid fa-mug-hot footer-icon"></i> Me soutenir sur Ko-fi
+        </a>
+        <a href="mailto:contact@example.com" class="footer-link">
+          <i class="fa-solid fa-envelope footer-icon"></i> Me contacter par email
+        </a>
+
+        <div class="mt-4">
+          <h5 class="footer-title">À propos</h5>
+          <p>Si c'est à gauche, c'est sur À GAUCHE.</p>
+          Des entrevues avec des personnalités et militants de gauche, ainsi que des extraits de pensées et réflexions de gauche.
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-4 bg-light">
+
+    <div class="row">
+      <div class="col-md-6 text-md-start text-center">
+        <p class="mb-0">&copy; 2019-2025 @AgaucheYT. Tous droits réservés.</p>
+      </div>
+      <div class="col-md-6 text-md-end text-center mt-3 mt-md-0">
+        <a href="#" class="text-white me-3"><i class="fa-solid fa-arrow-up"></i> Retour en haut</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
