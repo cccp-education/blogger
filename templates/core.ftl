@@ -10,14 +10,18 @@
           <a href="blog.html" class="btn btn-outline-dark"><i class="fa-solid fa-film me-2"></i>Regarder les vidéos</a>
         </div>
         <div class="mt-4">
+          <a href="https://www.youtube.com/@agauche" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
           <a href="https://x.com/AgaucheYT" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
           <a href="https://www.facebook.com/AgaucheYoutube" class="social-icon"><i class="fa-brands fa-square-facebook"></i></a>
           <a href="https://www.instagram.com/agauche_officiel" class="social-icon"><i class="fa-brands fa-square-instagram"></i></a>
           <a href="https://discord.gg/NGBc4nTrEu" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+          <a href="https://ko-fi.com/agauche" class="social-icon"><i class="fa-solid fa-mug-hot me-2"></i></a>
+          <a href="https://open.spotify.com/show/1ovb7OAtTd5a0yg4uw5wqO" class="social-icon"><i class="fa-brands fa-spotify me-2"></i></a>
+          <a href="https://deezer.com/show/1001701601" class="social-icon"><i class="fa-brands fa-deezer me-2"></i></a>
+          <a href="feed.xml" class="social-icon"><i class="fa-solid fa-rss footer-icon me-2"></i></a>
         </div>
       </div>
       <div class="col-lg-6 mt-5 mt-lg-0">
-        <img src="https://via.placeholder.com/600x400" alt="A Gauche" class="img-fluid rounded shadow">
       </div>
     </div>
   </div>
@@ -77,8 +81,7 @@
 <section class="py-5 bg-light">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-lg-6 mb-4 mb-lg-0">
-        <img src="https://via.placeholder.com/600x400" alt="À propos" class="img-fluid rounded shadow">
+      <div class="col-lg-6 mb-4 mb-lg-0"/>
       </div>
       <div class="col-lg-6">
         <h2 class="display-5 mb-4">À propos de moi</h2>

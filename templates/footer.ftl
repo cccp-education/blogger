@@ -14,6 +14,7 @@
 
       <div class="col-md-4 mb-4 mb-md-0">
         <h5 class="footer-title">Me suivre</h5>
+        <a href="https://www.youtube.com/@agauche" class="footer-link"><i class="fa-brands fa-youtube"></i> YouTube</a>
         <a href="https://discord.gg/NGBc4nTrEu" class="footer-link"><i class="fa-brands fa-discord footer-icon"></i> Discord</a>
         <a href="https://x.com/AgaucheYT" class="footer-link"><i class="fa-brands fa-x-twitter footer-icon"></i> Twitter</a>
         <a href="https://www.facebook.com/AgaucheYoutube" class="footer-link"><i class="fa-brands fa-square-facebook footer-icon"></i> Facebook</a>
