@@ -82,20 +82,20 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6 mb-4 mb-lg-0"/>
-      </div>
-      <div class="col-lg-6">
-        <h2 class="display-5 mb-4">À propos de moi</h2>
-        <p class="lead mb-4">Vous êtes intéressé par mon contenu.</p>
-        <p class="mb-4">Suivez-moi sur mes réseaux sociaux pour rester informé de mes dernières publications et activités.</p>
-        <p class="mb-4">Pour toutes demandes ou collaborations, n'hésitez pas à me contacter.</p>
-        <a href="mailto:contact@example.com" class="btn btn-primary">
-          <i class="fa-solid fa-envelope me-2"></i>Me contacter
-        </a>
-        <a href="https://ko-fi.com/agauche" class="btn btn-outline-dark ms-2">
-          <i class="fa-solid fa-mug-hot me-2"></i>Me soutenir
-        </a>
-      </div>
     </div>
+    <div class="col-lg-6">
+      <h2 class="display-5 mb-4">À propos de moi</h2>
+      <p class="lead mb-4">Vous êtes intéressé par mon contenu.</p>
+      <p class="mb-4">Suivez-moi sur mes réseaux sociaux pour rester informé de mes dernières publications et activités.</p>
+      <p class="mb-4">Pour toutes demandes ou collaborations, n'hésitez pas à me contacter.</p>
+      <a href="mailto:contact@example.com" class="btn btn-primary">
+        <i class="fa-solid fa-envelope me-2"></i>Me contacter
+      </a>
+      <a href="https://ko-fi.com/agauche" class="btn btn-outline-dark ms-2">
+        <i class="fa-solid fa-mug-hot me-2"></i>Me soutenir
+      </a>
+    </div>
+  </div>
   </div>
 </section>
 

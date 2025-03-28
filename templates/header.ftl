@@ -10,8 +10,17 @@
 
   <!-- Styles -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <link href="css/base.css" rel="stylesheet">
   <link href="css/baze.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 1px; /* Ajustez cette valeur selon la hauteur réelle de votre navbar */
+        }
+    </style>
+  <!--<link href="css/asciidoctor.css" rel="stylesheet">-->
+  <link href="css/justified-nav.css" rel="stylesheet">
+  <link href="css/prettify.css" rel="stylesheet">
 
   <script src="https://kit.fontawesome.com/01a45d7f35.js" crossorigin="anonymous"></script>
 

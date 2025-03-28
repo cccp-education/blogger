@@ -35,7 +35,7 @@
         <div class="mt-4">
           <h5 class="footer-title">À propos</h5>
           <p>Si c'est à gauche, c'est sur À GAUCHE.</p>
-            Des entrevues avec des personnalités et militants de gauche, ainsi que des extraits de pensées et réflexions de gauche.
+          Des entrevues avec des personnalités et militants de gauche, ainsi que des extraits de pensées et réflexions de gauche.
         </div>
       </div>
     </div>
