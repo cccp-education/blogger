@@ -16,4 +16,4 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "central-content"
+rootProject.name = "blogger"
